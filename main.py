@@ -41,6 +41,22 @@ def calc_data(data: list, cubes: list) -> int:
     
     return sum_of_games
 
-data = parse_data(get_data())
-c_data = calc_data(data, [12,13,14])
-print(c_data)
+def calc_power(data: list) -> int:
+    sum_of_power: int = 0
+    
+    for v in data:
+        sum_of_power += v[1][0]*v[1][1]*v[1][2]
+
+    return sum_of_power
+
+def part1() -> None:
+    data = parse_data(get_data())
+    c_data = calc_data(data, [12,13,14])
+    print(c_data)
+
+def part2() -> None:
+    data = parse_data(get_data())
+    data_power = calc_power(data)
+    print(data_power)
+
+part2()
